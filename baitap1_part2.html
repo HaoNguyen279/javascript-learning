@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dolphins score</h1>
+    <input type="text" name="" value="44"  id="ds1">
+    <input type="text" name="" value="23" id="ds2">
+    <input type="text" name="" value="71" id="ds3">
+    <h1>Koalas score</h1>
+    <input type="text" name="" value="65" id="ks1">
+    <input type="text" name="" value="54" id="ks2">
+    <input type="text" name="" value="49" id="ks3">
+
+    <button id="btnCalculate">Calculate</button>
+    <script>
+        var button = document.getElementById("btnCalculate");
+
+        const calcAverage = (s1, s2, s3) => {
+            return (s1 + s2 + s3)/2;
+        }
+        const checkWinner = (avgDolhins, avgKoalas) =>{
+            if(avgDolhins == avgKoalas){
+                console.log("Draw!");
+            }
+            else if(avgDolhins > avgKoalas*2){
+                console.log("Dolphins team won ( " + avgDolhins + " vs " + avgKoalas + " )");
+            }
+            else if(avgKoalas > avgDolhins*2){
+                console.log("Koalas team won ( " + avgKoalas + " vs " + avgDolhins + " )");
+            }
+            else{
+                console.log("No one won!");
+            }
+        }
+        button.onclick = () =>{
+            var ds1 = parseInt(document.getElementById("ds1").value);
+            var ds2 = parseInt(document.getElementById("ds2").value);
+            var ds3 = parseInt(document.getElementById("ds3").value);
+
+            var ks1 = parseInt(document.getElementById("ks1").value);
+            var ks2 = parseInt(document.getElementById("ks2").value);
+            var ks3 = parseInt(document.getElementById("ks3").value);
+
+            var avgDolphinsScore = calcAverage(ds1,ds2,ds3);
+            var avgKoalaScore = calcAverage(ks1 , ks2 , ks3);
+
+            checkWinner(avgDolphinsScore, avgKoalaScore);
+
+
+        }
+    </script>
+</body>
+</html>

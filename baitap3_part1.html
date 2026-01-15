@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dolphins score</h1>
+    <input type="text" name="" value="96"  id="ds1">
+    <input type="text" name="" value="108" id="ds2">
+    <input type="text" name="" value="89" id="ds3">
+    <h1>Koalas score</h1>
+    <input type="text" name="" value="88" id="ks1">
+    <input type="text" name="" value="91" id="ks2">
+    <input type="text" name="" value="110" id="ks3">
+
+    <button id="btnCalculate">Calculate</button>
+    <script>
+        var button = document.getElementById("btnCalculate");
+
+        button.onclick = () =>{
+            var ds1 = parseInt(document.getElementById("ds1").value);
+            var ds2 = parseInt(document.getElementById("ds2").value);
+            var ds3 = parseInt(document.getElementById("ds3").value);
+
+            var ks1 = parseInt(document.getElementById("ks1").value);
+            var ks2 = parseInt(document.getElementById("ks2").value);
+            var ks3 = parseInt(document.getElementById("ks3").value);
+
+            var avgDolphinsScore = (ds1 + ds2 + ds3) / 3;
+            var avgKoalaScore = (ks1 + ks2 + ks3) / 3;
+
+            // Ko team nao win
+            if(avgDolphinsScore < 100 && avgKoalaScore < 100){
+                console.log("No one won bc their scores are all below 100!");
+                return;
+            }
+            // 2 team > 100
+            if(avgDolphinsScore >= 100 && avgKoalaScore >= 100){
+                if(avgDolphinsScore == avgKoalaScore){
+                    console.log("Draw!!");
+                    return;
+                }
+                if(avgDolphinsScore > avgKoalaScore){
+                    console.log("Dolphins team won!" + avgDolphinsScore + ">" + avgKoalaScore)
+                    return;
+                }
+                else{   
+                    console.log("Koalas team won!" + avgKoalaScore + ">" + avgDolphinsScore)
+                    return;
+                }
+                return;
+            }
+            else{
+                if(avgDolphinsScore > avgKoalaScore){
+                    console.log("Dolphins team won!" + avgDolphinsScore + ">" + avgKoalaScore)
+                }
+                else{
+                    console.log("Koalas team won!" + avgKoalaScore + ">" + avgDolphinsScore)
+                }
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>
