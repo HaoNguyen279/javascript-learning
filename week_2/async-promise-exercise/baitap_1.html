@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const whereAmI =  (lat, lng) =>{
+            fetch("https://geocode.xyz/"+ lat+ "," + lng +"?geoit=json")
+                .then(async (data) =>{
+                    return await data.json();
+                }).then((data) =>{
+                    console.log("Location :" + lat+ ", " + lng);
+                    console.log("Your are in "+ data.region);
+                    console.log("Respones JSON :  " + JSON.stringify(data));
+                }).catch((error) =>{
+                    console.log(error);
+                })
+        }
+        whereAmI(52.508, 13.381);
+    </script>
+</body>
+</html>
