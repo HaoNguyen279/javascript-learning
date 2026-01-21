@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" value="92"  id="jmass">
+    <input type="text" name="" value="1.95" id="jheight">
+    <input type="text" name="" value="78" id="mmass">
+    <input type="text" name="" value="1.69" id="mheight">
+    <button id="btnCalculate">Calculate</button>
+    <script>
+        var button = document.getElementById("btnCalculate");
+
+        var Mark = {
+            fullname : "Mark Miller",
+            mass : 0,
+            height : 0,
+            calcBMI : function () {
+                var bmi = this.mass/ (this.height * this.height);
+                return bmi; 
+            }
+        }
+        var John = {
+            fullname : "John Smith",
+            mass : 0,
+            height : 0,
+            calcBMI :  function() {
+                var bmi = this.mass/ (this.height * this.height);
+                return bmi; 
+            }
+        }
+        button.onclick = () =>{
+            var john_mass = document.getElementById("jmass").value;
+            var john_height = document.getElementById("jheight").value;
+            var mark_mass = document.getElementById("mmass").value;
+            var mark_height = document.getElementById("mheight").value;
+
+            Mark.height = mark_height;
+            Mark.mass = mark_mass;
+            John.height = john_height;
+            John.mass = john_mass;
+
+            var markHigherBMI =  Mark.calcBMI() > John.calcBMI();
+            console.log("Mark BMI:" + Mark.calcBMI() + ", John BMI :" + John.calcBMI())
+            if(markHigherBMI){
+                console.log("Mark's BMI is higher than John's!");
+            }
+            else console.log("John's BMI is higher than Mark's!");
+        }
+    </script>
+</body>
+</html>

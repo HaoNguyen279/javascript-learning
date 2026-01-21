@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <h1>Bill</h1>
+    <input type="text" name="" value="125"  id="bill0">
+    <input type="text" name="" value="555"  id="bill1">
+    <input type="text" name="" value="44"  id="bill2">
+
+
+    <button id="btnCalculate">Calculate</button>
+
+    <script>
+        var button = document.getElementById("btnCalculate");
+        var tip = 0;
+        var bills = [125, 555, 44];
+        var tips = [];
+        var totals = [];
+
+        button.onclick = () =>{
+            var bill0 = parseInt(document.getElementById("bill0").value);
+            var bill1 = parseInt(document.getElementById("bill1").value);
+            var bill2 = parseInt(document.getElementById("bill2").value);
+            bills = [bill0, bill1, bill2];
+
+            calcTip(bills);
+            console.log("Bills: " + bills);
+            console.log("Tips: " + tips);
+            console.log("Totals: " + totals);
+
+        }
+        const calcTip = (bills) => {
+            for(let i = 0; i < bills.length; i++) {
+                const tip = calculateTip(bills[i]);
+                tips.push(tip);
+                totals.push(tip + bills[i]);
+            }
+            function calculateTip(billAmount) {
+                return (billAmount >= 50 && billAmount <= 300) ? billAmount * 0.15 : billAmount * 0.20;
+            }
+        };
+
+    </script>
+</body>
+</html>
