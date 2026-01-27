@@ -11,6 +11,7 @@ function App() {
     <>  
       <Button type ="success" method= "GET" >Get API</Button>
       <Button type ="danger" method = "POST">Post API</Button>
+      <Button type ="primary" method = "POST">Primary button</Button>
     </>
   )
 }
