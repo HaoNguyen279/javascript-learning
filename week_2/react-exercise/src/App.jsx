@@ -1,18 +1,21 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom' // <== thiếu import
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Button from '../src/components/Button'
+import Bai3 from './Bai3'
+import Bai2 from './Bai2'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>  
-      <Button type ="success" method= "GET" >Get API</Button>
-      <Button type ="danger" method = "POST">Post API</Button>
-      <Button type ="primary" method = "POST">Primary button</Button>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Bai2 />} />
+        <Route path="/bai3" element={<Bai3 />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
