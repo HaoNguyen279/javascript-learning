@@ -51,7 +51,24 @@
 p{
   margin: 0;
 }
+h4{
+  margin: 0;
+}
 
 .read-the-docs {
   color: #888;
+}
+.todo-item {
+  background-color: #1a1a1a; 
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.25s, transform 0.2s;
+  cursor: pointer;
+  padding: 5px;
+  text-align: left;
+  margin: 5px;
+}
+.is-done {
+  text-decoration: line-through;
+  color: gray;
 }
