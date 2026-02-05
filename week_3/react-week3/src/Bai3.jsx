@@ -5,15 +5,33 @@ import './App.css'
 import axios from 'axios'
 function Bai3() {
     const [array, setArray] = useState([]);
-    const [arrayFiltered, setArrayFiltered] = useState([]);
-    const [filterName, setFilterName] = useState();
+    const [filterName, setFilterName] = useState('');
+
+    console.log('Re Render cái --------------------------------------------------------');
+    const arrayFiltered = useMemo(() =>{
+        console.time('Filter product');
+        const res = array.filter( item => item.title.toLowerCase().includes(filterName.toLowerCase()));
+        console.timeEnd('Filter product');
+        return res;
+    }, [array, filterName]);
+
+    const defaultTotal = useMemo(()=>{
+        console.time('Calculate total');
+        const res = array.reduce((sum, item) => sum + item.price, 0);
+        console.timeEnd('Calculate total');
+        return res;
+    })
+
+    const filteredTotal = useMemo(() =>{
+        console.time('Calculate filtered total');
+        const res = arrayFiltered.reduce((sum, item) => sum + item.price, 0);
+        console.timeEnd('Calculate filtered total');
+        return res;
+    })
+
 
     function handle(event){
-        const {name, value} = event.target;
-        setFilterName(value);
-        setArrayFiltered(array.filter((item) =>{
-            if(item.title.toLowerCase().includes(filterName.toLowerCase())) return item;
-        }))
+        setFilterName(event.target.value);
     }
     useEffect(() =>{
         const callback = async () =>{
@@ -23,19 +41,14 @@ function Bai3() {
         }
         callback();
     },[]);
-    const defaultTotal = useMemo(() =>{
-        return array.reduce((sum, item) => sum + item.price, 0);
-    });
-    const filteredTotal = useMemo(() =>{
-        return arrayFiltered.reduce((sum, item) => sum + item.price, 0);
-    })
+
 
   return (
     <>
     <h1>Bai 3</h1>
     <p>Name filter</p> <p>{filterName}</p>
-    <h3>{defaultTotal}</h3>
-    <h3>{filteredTotal}</h3>
+    <h3> Default total: {defaultTotal}</h3>
+    <h3>Filtered total: {filteredTotal}</h3>
     <input type="text" name="" id="" value={filterName} onChange={handle} />
     <div style={{display : 'flex', gap:30}}>
         <div>
