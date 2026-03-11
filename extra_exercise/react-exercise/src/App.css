@@ -1,0 +1,104 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+  align-items: stretch;
+}
+
+
+input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  font-size: 1rem;
+  outline: none;
+  background-color: #ffffff;
+  color: #24292f;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+input:focus {
+  border-color: #646cff;
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+}
+
+
+input::placeholder {
+  color: #8c959f;
+}
+
+
+/* button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #646cff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #535bf2;
+} */
+
+.item {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 12px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 500;
+  /* Đổ bóng nhẹ để tạo chiều sâu */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
