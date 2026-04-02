@@ -11,7 +11,7 @@ function Dashboard() {
   return (
     <>
       <p>Dashboard Content</p>
-      <button onClick={navigateToAnalytics}>Analytics</button>  
+      <button onClick={navigateToAnalytics}>Analytics</button>
       <button onClick={navigateToSales}>Sales</button>
       <Outlet />
     </>
