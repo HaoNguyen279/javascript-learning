@@ -3,13 +3,15 @@ import CreateAccount from "./CreateAccount";
 import HomePage from "./HomePage";
 import SearchPage from "./SearchPage";
 import DashboardPage from "./DashboardPage";
+import SubscribePage from "./SubscribePage";
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/create-account" element={<CreateAccount />} />
-      <Route path="/search" element={<SearchPage />} />
+      <Route path="/search/:searchtext" element={<SearchPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/subscribe" element={<SubscribePage />} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

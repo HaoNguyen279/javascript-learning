@@ -1,0 +1,285 @@
+.subscribe-page {
+  background: #f7f7f8;
+  min-height: 100vh;
+  color: #2f3442;
+}
+
+.subscribe-main {
+  padding: 16px 0 0;
+}
+
+.subscribe-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumb */
+.subscribe-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7d8390;
+  font-size: 14px;
+  margin: 6px 0 28px;
+}
+
+.subscribe-breadcrumb .active {
+  color: #ef4b8f;
+  font-weight: 600;
+}
+
+/* Hero */
+.subscribe-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.subscribe-left {
+  padding: 8px 0;
+}
+
+.exclusive-text {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.subscribe-left h1 {
+  color: #ef4b8f;
+  font-size: 44px;
+  line-height: 1.2;
+  margin: 0 0 18px;
+  letter-spacing: -0.3px;
+}
+
+.benefit-list {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #545c6c;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.benefit-list li svg {
+  color: #f3b022;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.price-box h2 {
+  font-size: 24px;
+  margin: 6px 0 6px;
+  color: #2f3442;
+  line-height: 1.3;
+}
+
+.price-box p {
+  margin: 0 0 18px;
+  color: #6b7280;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.subscribe-btn {
+  width: 100%;
+  max-width: 520px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: #ef4b8f;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.subscribe-btn:hover {
+  opacity: 0.92;
+}
+
+.subscribe-btn.center {
+  margin: 8px auto 0;
+  display: flex;
+}
+
+.cancel-text {
+  margin-top: 12px;
+  color: #ef4b8f;
+  font-size: 16px;
+  text-align: center;
+}
+
+.subscribe-right img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* All access */
+.all-access {
+  margin-top: 78px;
+  text-align: center;
+}
+
+.all-access h2 {
+  color: #ef4b8f;
+  font-size: 42px;
+  line-height: 1.25;
+  margin-bottom: 24px;
+  letter-spacing: -0.2px;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.access-card {
+  background: #fff;
+  border: 1px solid #eceef3;
+  border-radius: 12px;
+  padding: 22px 18px;
+}
+
+.access-card h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #2f3442;
+}
+
+.access-card p {
+  margin: 0;
+  color: #606a7b;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Plan section */
+.subscribe-plan {
+  margin: 78px auto 40px;
+  text-align: center;
+  max-width: 720px;
+}
+
+.plan-brand {
+  color: #ef4b8f;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subscribe-plan h2 {
+  margin: 0 0 8px;
+  color: #ef4b8f;
+  font-size: 42px;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+
+.plan-desc {
+  margin: 0 auto 20px;
+  color: #5c6473;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+.plan-options {
+  display: grid;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.plan-option {
+  height: 52px;
+  border: 1px solid #d7dce5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  background: #fff;
+  font-size: 16px;
+  color: #3c4453;
+}
+
+.plan-option.active {
+  border-color: #ef4b8f;
+}
+
+.plan-option input {
+  accent-color: #ef4b8f;
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .subscribe-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .subscribe-right img {
+    min-height: 380px;
+  }
+
+  .access-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .subscribe-container {
+    padding: 0 16px;
+  }
+
+  .subscribe-left h1 {
+    font-size: 34px;
+  }
+
+  .all-access h2,
+  .subscribe-plan h2 {
+    font-size: 32px;
+  }
+
+  .price-box p,
+  .benefit-list li,
+  .plan-desc {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subscribe-right img {
+    min-height: 300px;
+  }
+
+  .subscribe-btn {
+    max-width: 100%;
+  }
+}

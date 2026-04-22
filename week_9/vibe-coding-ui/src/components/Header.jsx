@@ -1,12 +1,25 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate, useNavigation } from "react-router-dom";
 import { FiSearch, FiPackage } from "react-icons/fi";
 import "./Header.css";
 
 // Đổi tên file logo/avatar theo asset của bạn
 import logo from "../assets/logo.png";
 import avatar from "../assets/react.svg";
+import { useState } from "react";
 
+function SearchInput() {
+  const [value, setValue] = useState();
+  const navigate = useNavigate();
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      navigate("/search/" + value);
+    }
+  };
+
+  return <input type="text" defaultValue="" onChange={e => setValue(e.target.value)} aria-label="Search recipes" placeholder="What u would like to cook" onKeyDown={handleKeyDown} />;
+}
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <header className="header">
       <div className="header__inner">
@@ -18,8 +31,8 @@ export default function Header() {
 
         {/* Search */}
         <div className="header__search">
-          <FiSearch className="header__search-icon" />
-          <input type="text" defaultValue="" aria-label="Search recipes" placeholder="What u would like to cook" />
+          <FiSearch className="header__search-icon" onClick={() => navigate("/search")} />
+          <SearchInput/>
         </div>
 
         {/* Center nav */}
@@ -27,7 +40,7 @@ export default function Header() {
           <NavLink to="#" className="header__nav-link">
             What to cook
           </NavLink>
-          <NavLink to="#" className="header__nav-link">
+          <NavLink to="/subscribe" className="header__nav-link">
             Recipes
           </NavLink>
           <NavLink to="#" className="header__nav-link">
